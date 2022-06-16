@@ -15,10 +15,9 @@ const newProduct = async (req, res) => {
             car_name: req.body.car_name,
             car_model: req.body.car_model,
             car_num: req.body.car_num,
-            car_image: req.body.car_image,
+            car_image: req.file.path,
             userId: req.payload.user._id
         })
-        console.log(req.payload.user._id);
         const newProduct = await product.save()
         return res.status(200).json({ status: 1, msg: "Product is created", newProduct })
 

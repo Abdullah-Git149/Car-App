@@ -17,11 +17,26 @@ const userSchema = mongoose.Schema({
         trim: true,
 
     },
+    image: {
+        type: String,
+        default: null
+    },
     user_authentication: {
         type: String,
         default: null,
         required: false
-    }
+    }, code: {
+        type: Number,
+        default: null
+    },
+    verified: {
+        type: Number,
+        default: 0
+    },
+    is_blocked: {
+        type: Number,
+        default: 0
+    },
 },
     {
         timestamps: true
